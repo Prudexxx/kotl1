@@ -45,6 +45,12 @@
             margin-bottom: 30px;
         }
         
+        .header-top {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-bottom: 10px; /* или другое значение для отступа */
+        }
         .highlight {
             background-color: #ffcc00;
             display: inline-block;
@@ -106,7 +112,23 @@
             margin: 25px 0;
             color: #333;
         }
-        
+        button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #685cd4; /* зеленый цвет */
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* тень справа и снизу */
+}
+
+button:active {
+  background-color: #e41ea2; /* более темный при нажатии */
+  transform: scale(0.98); /* эффект сжатия */
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); /* менее заметная тень при нажатии */
+}
         .price {
             font-weight: bold;
             margin: 20px 0;
@@ -232,11 +254,14 @@
 
     <!-- Основной контент -->
     <div class="container">
-        <div class="header">
-            <div style="text-align: left;">Только у нас!</div><br>
-            <h3 style="text-align: left;">Единственный на рынке, промышленный котёл отопительный "<span class="red">РПКТЭК - 560 </span>",<br> обеспечивающий стабильный доход, при самых низких тарифах!</h3>
-        </div>
-        
+ <div class="header">
+    <div class="header-top">
+        <div style="font-weight: bold; font-size: 20px;">Только у нас!</div>
+       <a href="https://max.ru/u/f9LHodD0cOL9jqM99KpCB4akEJ-gMBj2Kx13Nf3xuMS2ziRt_LqzLWXixBg" target="_blank"><button style="padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 10px; ">пишите нам в мах        </button></a> 
+    </div>
+    <br>
+    <h3 style="text-align: left;">Единственный на рынке, промышленный котёл отопительный "<span class="red">РПКТЭК - 560 </span>",<br> обеспечивающий стабильный доход, при самых низких тарифах!</h3>
+</div>
         <p><h3></h3> <b style="font-size: 20px;">Стабильный высокий доход с</b>  "<b class="red">РПКТЭК - 560 </b>" или непредсказуемость, убытки, выбор за Вами!</p>
         
         <p>Предлагаем, для котельных от 300 до 4000 кВт (обеспечение отоплением, ГВС, помещений от 300 до 40000 кв. м.), оборудование, обеспечивающее гарантированную, быструю окупаемость:</p>
@@ -263,7 +288,7 @@
 
         <div class="img">
             <video class="my-video" autoplay loop muted playsinline>
-                <source src="котел (online-video-cutter.com).mp4" type="video/mp4" />
+                <source src="/котел (online-video-cutter.com).mp4" type="video/mp4" />
                 Ваш браузер не поддерживает тег видео.
             </video>
         </div>
@@ -363,5 +388,5 @@
     </div>
 
 </body>
-
 </html> 
+
