@@ -276,7 +276,7 @@ button:active {
     color: #fff;
     position: relative;
     overflow: hidden;
-    animation: pulse 3s infinite ease-in-out;
+    animation: pulse 2s infinite ease-in-out;
     box-shadow: 0 0 10px #00ffff inset, 0 0 20px #00ffff;
   }
 
@@ -293,31 +293,34 @@ button:active {
   }
 
   /* Анимация пробегающего блеска */
-  .animated-button::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      120deg,
-      transparent,
-      rgba(255, 255, 255, 0.6),
-      transparent
-    );
-    transform: rotate(25deg) translateX(-100%);
-    animation: shine 5s linear infinite;
-  }
+.animated-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%; /* начинаем за пределами слева */
+  width: 70%; /* ширина полосы блеска, примерно 20-25% кнопки */
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transform: skewX(20deg); /* чуть добавим наклон для более яркого эффекта */
+  animation: shine 3s linear infinite;
+  pointer-events: none;
+  border-radius: 4px;
+}
 
-  @keyframes shine {
-    0% {
-      transform: rotate(25deg) translateX(-100%);
-    }
-    100% {
-      transform: rotate(25deg) translateX(100%);
-    }
+/* Анимация перемещения */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(20deg);
   }
+  100% {
+    transform: translateX(100%) skewX(20deg);
+  }
+}
     </style>
 </head>
 
@@ -338,7 +341,7 @@ button:active {
 </div>
  <div class="header">
     <div class="header-top">
-        <div style="font-weight: bold; font-size: 20px; margin-right: 5px;">Только у нас!</div>
+        <div style="font-weight: bold; font-size: 20px; margin-right: 5;">Только у нас!</div>
       <a href="https://max.ru/u/f9LHodD0cOL9jqM99KpCB4akEJ-gMBj2Kx13Nf3xuMS2ziRt_LqzLWXixBg" target="_blank" style="text-decoration: none;">
   <button class="animated-button">пишите нам в мах</button>
 </a>
@@ -473,6 +476,7 @@ button:active {
 
 </body>
 </html> 
+
 
 
 
