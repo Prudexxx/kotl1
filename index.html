@@ -312,6 +312,24 @@ button:active {
   border-radius: 4px;
 }
 
+.animated-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* или contain, если хотите сохранить пропорции без обрезки */
+  display: block;
+}
+
+.animated-button {
+  padding: 0;
+  border: none;
+  background: none;
+  display: inline-block;
+  width: 40%; /* или фиксированная ширина, если нужно */
+  height: 100%; /* или фиксированная высота */
+  position: relative;
+  overflow: hidden;
+}
+
 /* Анимация перемещения */
 @keyframes shine {
   0% {
@@ -343,7 +361,7 @@ button:active {
     <div class="header-top">
         <div style="font-weight: bold; font-size: 20px; margin-right: 5;">Только у нас!</div>
       <a href="https://max.ru/u/f9LHodD0cOL9jqM99KpCB4akEJ-gMBj2Kx13Nf3xuMS2ziRt_LqzLWXixBg" target="_blank" style="text-decoration: none;">
-  <button class="animated-button">пишите нам в мах</button>
+  <button class="animated-button"><img src="кнопка.PNG" alt=""></button>
 </a>
     </div>
     <br>
