@@ -2,20 +2,17 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<meta name="yandex-verification" content="e7f688d94c34718d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="yandex-verification" content="e7f688d94c34718d" />
     <title>Промышленный котёл "РПКТЭК-560" - Стабильный доход при низких тарифах</title>
     <meta name="description" content="Купить промышленный твердотопливный котёл 'РПКТЭК-560' для стабильного и рентабельного отопления. Надежное оборудование с высоким КПД, быстрое окупаемость, выгодные цены." />
     <meta name="keywords" content="промышленный котёл, РПКТЭК-560, твердотопливный котёл, промышленное отопление, котлы на твердом топливе, оборудование для отопления, энергоэффективное отопление, котлы для бизнеса" />
-
-    <!-- Можно добавить Open Graph и Twitter Card для соцсетей -->
     <meta property="og:title" content="Промышленный котёл 'РПКТЭК-560' - Надежное отопление" />
     <meta property="og:description" content="Купить промышленный твердотопливный котёл 'РПКТЭК-560' для стабильного дохода и снижения затрат на отопление." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="rpktek.ru" />
     <meta property="og:image" content="ссылка_на_картинку" />
-<link rel="icon" href="фавикон.png" type="image/png" />
+    <link rel="icon" href="фавикон.png" type="image/png" />
     <style>
         /* Базовые стили */
         * {
@@ -26,9 +23,11 @@
         }
         
         body {
-            background-color:  #d3eeff;
+            background-color: #d3eeff;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden; /* Убираем горизонтальный скролл */
+            max-width: 100%;
         }
         
         .container {
@@ -37,6 +36,7 @@
             padding: 20px;
             position: relative;
             z-index: 2;
+            overflow-x: hidden; /* защита от вылезания элементов */
         }
         
         .header {
@@ -46,10 +46,12 @@
         }
         
         .header-top {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                margin-bottom: 10px; /* или другое значение для отступа */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         .highlight {
             background-color: #ffcc00;
@@ -141,14 +143,17 @@
             justify-content: center;
             gap: 15px;
             margin: 25px 0;
+            flex-wrap: wrap;
         }
         
         .img-gallery img {
-            max-width: 33%;
+            max-width: 100%;
+            width: auto;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            flex: 1 1 300px;
+            flex: 1 1 280px;
+            object-fit: contain;
         }
         
         .red{
@@ -156,7 +161,8 @@
         }
 
         .brevno{
-        width: 50%;
+            width: 50%;
+            max-width: 100%;
         }
         
         /* Стили для видео */
@@ -175,14 +181,15 @@
             width: 100%;
             height: 100vh;
             z-index: 1;
-            pointer-events: none; /* Чтобы не мешала взаимодействию с контентом */
+            pointer-events: none;
+            overflow: hidden;
         }
 
         .zastavka video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.3; /* Полупрозрачная заставка */
+            opacity: 0.3;
         }
         
         @media (max-width: 768px) {
@@ -221,110 +228,113 @@
             }
             
             .zastavka video {
-                opacity: 0.2; /* Еще более прозрачная на мобильных */
+                opacity: 0.2;
             }
         }
 
-         .marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-  }
+        .marquee {
+            width: 100%;
+            overflow-x: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
 
-  .marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 20s linear infinite;
-    color: #f5900b;
-    font-size: 25px;
-    font-weight: bold;
-  }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+            color: #f5900b;
+            font-size: 25px;
+            font-weight: bold;
+        }
 
-  @keyframes marquee {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(-100%, 0);
-    }
-  }
+        @keyframes marquee {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
 
-    .animated-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 2px solid #00ffff;
-    background-color: #222;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    animation: pulse 2s infinite ease-in-out;
-    box-shadow: 0 0 10px #00ffff inset, 0 0 20px #00ffff;
-  }
+        .animated-button {
+            padding: 0;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 2px solid #00ffff;
+            background-color: #222;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite ease-in-out;
+            box-shadow: 0 0 10px #00ffff inset, 0 0 20px #00ffff;
+            display: inline-block;
+            width: auto;
+            max-width: 280px;
+            height: auto;
+            background: none;
+        }
 
-  /* Анимация пульсации для увеличения и уменьшения */
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 0 10px #00ffff inset, 0 0 20px #00ffff;
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #00ffff inset, 0 0 40px #00ffff;
-    }
-  }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px #00ffff inset, 0 0 20px #00ffff;
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px #00ffff inset, 0 0 40px #00ffff;
+            }
+        }
 
-  /* Анимация пробегающего блеска */
-.animated-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -40%; /* начинаем за пределами слева */
-  width: 70%; /* ширина полосы блеска, примерно 20-25% кнопки */
-  height: 100%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.8),
-    transparent
-  );
-  transform: skewX(20deg); /* чуть добавим наклон для более яркого эффекта */
-  animation: shine 3s linear infinite;
-  pointer-events: none;
-  border-radius: 4px;
-}
+        .animated-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -40%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.8),
+                transparent
+            );
+            transform: skewX(20deg);
+            animation: shine 3s linear infinite;
+            pointer-events: none;
+            border-radius: 4px;
+        }
 
-.animated-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* или contain, если хотите сохранить пропорции без обрезки */
-  display: block;
-}
+        .animated-button img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+        }
 
-.animated-button {
-  padding: 0;
-  border: none;
-  background: none;
-  display: inline-block;
-  width: 60%; /* или фиксированная ширина, если нужно */
-  height: 100%; /* или фиксированная высота */
-  position: relative;
-  overflow: hidden;
-}
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) skewX(20deg);
+            }
+            100% {
+                transform: translateX(100%) skewX(20deg);
+            }
+        }
 
-/* Анимация перемещения */
-@keyframes shine {
-  0% {
-    transform: translateX(-100%) skewX(20deg);
-  }
-  100% {
-    transform: translateX(100%) skewX(20deg);
-  }
-}
-
-
+        /* дополнительные фиксы для изображений и контента */
+        .i img, .img img, .img-gallery img {
+            max-width: 100%;
+            height: auto;
+        }
+        .header-top a {
+            display: inline-flex;
+            max-width: 100%;
+        }
+        table, iframe, video {
+            max-width: 100%;
+        }
     </style>
 </head>
 
@@ -339,22 +349,21 @@
 
     <!-- Основной контент -->
     <div class="container">
-         <div class="i">
-            <img src="котелНью-no-bg-preview (carve.photos) (1) (1).png" alt="Два промышленных котла РПКТЭК-560" />
-      
+        <div class="i">
+            <img src="/котелНью-no-bg-preview (carve.photos) (1) (1).png" alt="Два промышленных котла РПКТЭК-560" />
         </div>
         <!-- <div class="marquee">
   <span> <b style="font-size: 30px; color: #0e0279;">  Эффективность котлов "РПКТЭК" подтверждена Министерством Энергетики РФ, информация о котлах "РПКТЭК" внесена ФГБУ "РЭА" Минэнерго России в ЕСИФ (единую   информационно-справочный фонд) в базу данных "Промышленные инновации" (информационный лист 77-115-25) доступна в электронном каталоге ЕСИФ. </b></span>
 </div> -->
- <div class="header">
-    <div class="header-top">
-        <div style="font-weight: bold; font-size: ; margin-right: 5;">Только у нас!</div>
-      <a href="https://max.ru/u/f9LHodD0cOL9jqM99KpCB4akEJ-gMBj2Kx13Nf3xuMS2ziRt_LqzLWXixBg" target="_blank" style="text-decoration: none;">
-  <button class="animated-button"><img src="кнопка.PNG" alt=""></button>
-</a>
-    </div>
-    <br>
-    <p style="text-align: left;"> <b> Предлагаем к приобретению инновационный промышленный твердотопливный котёл
+        <div class="header">
+            <div class="header-top">
+                <div style="font-weight: bold; font-size: 1.2rem; margin-right: 5;">Только у нас!</div>
+                <a href="https://max.ru/u/f9LHodD0cOL9jqM99KpCB4akEJ-gMBj2Kx13Nf3xuMS2ziRt_LqzLWXixBg" target="_blank" style="text-decoration: none; display: inline-block; max-width: 100%;">
+                    <button class="animated-button"><img src="кнопка.PNG" alt="Кнопка"></button>
+                </a>
+            </div>
+            <br>
+            <p style="text-align: left;"> <b> Предлагаем к приобретению инновационный промышленный твердотопливный котёл
 длительного горения <span class="red">"РПКТЭК - 560" </span>, собственной разработки. Идеально подходит для
 котельных, максимальной мощностью от 500 до 4000 кВт. Расчёты себестоимости тепловой
 энергии, затрат на организацию пункта производства тепловой энергии, при установке в них
@@ -363,9 +372,9 @@
 Вне конкуренции! Рентабельное теплоснабжение в любой локации.<br><br>
 При эксплуатации "РПКТЭК - 560 " себестоимость отопления, ГВС, существенно меньше, чем при
 применении любых других котлов, работающих на газе, угле, щепе, твёрдом топливе.
-   </b>  </p>
-</div>
-        <p><h3></h3> <b style="font-size: px; text-decoration: underline;">Уникальность, фишка:</b>  <br><b class=""></p>
+            </b> </p>
+        </div>
+        <p><h3></h3> <b style="font-size: px; text-decoration: underline;">Уникальность, фишка:</b>  <br><b class=""></b></p>
         
         <p style="font-size: px;">"РПКТЭК-560" единственный на рынке, промышленный твердотопливный котёл, технические
 характеристики которого определены, подтверждены официально!
@@ -377,7 +386,7 @@
 существенно ниже, или их обеспечение будет экономически очень затратным. Это понятно из
 применяемых ими принципов сжигания топлива, характеристики которых точно обозначены во
 всех учебниках по теплоэнергетике, котлостроению, и не могут их превышать.</p> <br>
-  <p style="font-size: ;">"РПКТЭК-560" производятся из жаропрочной (до 1100 С) нержавеющей стали, а не из "черных"
+        <p style="font-size: ;">"РПКТЭК-560" производятся из жаропрочной (до 1100 С) нержавеющей стали, а не из "черных"
 сталей и "серого" чугуна, предназначенных для работы до 450 С. Что в разы увеличивает сроки
 эксплуатации, минимизирует амортизацию. Температура горения дров до 850 С.
 </p> <br>
@@ -386,40 +395,14 @@
 ОТЧЁТОМ, ПО РЕЗУЛЬТАТАМ ИСПЫТАНИЙ, ПРОВЕДЁННЫХ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ
 ИНСТИТУТОМ ОАО "ВТИ" г. МОСКВА (ВСЕРОССИЙСКИЙ ТЕПЛОТЕХНИЧЕСКИЙ ИНСТИТУТ). (см.
 ниже)</p> <br>
-<p style="font-size: px;">24.11.2025 г. ФГБУ «РЭА» Минэнерго России размещена информация о теплогенерирующем
+        <p style="font-size: px;">24.11.2025 г. ФГБУ «РЭА» Минэнерго России размещена информация о теплогенерирующем
 оборудовании, котлах промышленных твердотопливных «РПКТЭК», в базе данных
 «Промышленные инновации» (информационный лист № 77-115-25), в ЕСИФ (единый справочно -
 информационный фонд), гарантировано обеспечивающих рентабельную работу, при самых
 низких тарифах на тепловую энергию.
 </p>
-        <!-- <h3>Котёл твердотопливный, промышленный, «специальный» (длительного горения) по классификации Таможенного союза</h3>
         
-        <div class="product-name">"<b class="red">РПКТЭК - 560 </b>"
-        
-        <ul class="features">
-            <li>регулируемая мощность от 50 до 500 кВт, толка из нержавеющих сталей</li>
-        </ul>
-    
-        <p style="color: rgb(134, 4, 102); font-size: 18px;">Вне конкуренции, окупаемость, от года! Рентабельное теплоснабжение в любой локации.</p></div>
-        
-        <div class="certification">
-           <b> <p>&ensp;!!! &ensp; ВСЕ ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ КОТЛА "<b class="red">РПКТЭК - 560 </b>" УСТАНОВЛЕНЫ В ХОДЕ НЕОДНОКРАТНО ПРОВЕДЁННЫХ ИСПЫТАНИЙ, ПОДТВЕРЖДЕНЫ, В ТОМ ЧИСЛЕ, ОТЧЁТОМ ПО РЕЗУЛЬТАТАМ ИСПЫТАНИЙ, ПРОВЕДЁННЫХ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ИНСТИТУТОМ ОАО "ВТИ" Г. МОСКВА (ВСЕРОССИЙСКИЙ ТЕПЛОТЕХНИЧЕСКИЙ ИНСТИТУТ). (см. ниже)</p>
-        </div>
-        
-        <div class="benefits">
-            <p>&ensp;При эксплуатации "<b class="red">РПКТЭК - 560 </b>" себестоимость отопления, ГВС, <u >  доказано</u>  в разы меньше, чем при применении любых котлов, работающих на газе, угле, щепе, других твердотопливных котлов.</p>
-        </div></b>  
-        
-        <p class="">При использовании котлов "<b class="red">РПКТЭК - 560 </b>", не сложно обеспечить себестоимость тепловой энергии менее 1000 руб. за 1 Гкал.</p>
-
-        <div class="img">
-            <video class="my-video" autoplay loop muted playsinline>
-                <source src="котел (online-video-cutter.com).mp4" type="video/mp4" />
-                Ваш браузер не поддерживает тег видео.
-            </video>
-        </div> -->
-        
-        <p > <div style="text-decoration: underline;color: #000;;">Стоимость котла:</div><br> 
+        <p> <div style="text-decoration: underline;color: #000;;">Стоимость котла:</div><br> 
          <p style=""> модель "<b class="">РПКТЭК - 560 </b>" - 2 млн 300 т.р <br>
          модель  "<b class="">RPKTEK – 560 SPETC </b>" (трубный теплообменник из бесшовной нержавеющей трубы «вечный») - 2 млн 600 т.р
         </p></p> <br>
@@ -435,7 +418,7 @@
         </p>
         <p>&ensp; Наш Инвестиционный проект по концессии котельных (с рентабельностью от 52%), с монтажом, эксплуатацией в них котлов  "<b class="">РПКТЭК - 560 </b>"  награждён Министерством Энергетики Российской Федерации дипломом финалиста международного конкурса «Малая энергетика – большие достижения» в номинации «Инновационная разработка в сфере энергетики».(см. ниже)
         </p>
- <br>
+        <br>
         <p > <p style="text-decoration: underline;"> Подробнее: 
         Котёл " РПКТЭК - 560  "</p> <br>
         - <u> Максимально надёжно</u> : топка на 100% из нержавеющих жаропрочных сталей, теплообменник из бесшовных труб, не имеющих сварных швов внутри котла, все снаружи (патент на изобретение, см. ниже), непрогораемый в любых аварийных случаях, работает на естественной тяге, без необходимости применения электро потребляющего оборудования, вентиляторов, дымососов.<br> <br>
@@ -458,7 +441,7 @@
         </p>
 
         <div class="img ">
-            <img   class="brevno" src="1738523952115.jpg"  alt="Пример основного вида топлива для котла РПКТЭК-560" />
+            <img class="brevno" src="1738523952115.jpg" alt="Пример основного вида топлива для котла РПКТЭК-560" />
         </div><br>  <br>  
         <p class="">В первую очередь наиболее выгодно тем, у кого на удалении до 100 км., от места установки котла (котлов) "<b class="red">РПКТЭК - 560 </b>" ведётся промышленная валка леса.</p>     
 
@@ -496,7 +479,6 @@
         Email: rpktek@ya.ru<br><br>
 
         Tel: +7 903 529 38 73 <br><br>
-
 
         Возможна поставка котлов  "<b class="">РПКТЭК - 560 </b>" «под ключ» (с монтажом, пуско-наладкой).<br><br>
 
@@ -552,13 +534,9 @@
  Затраты итого: 5 544 000 руб.<br>
 2 520 000 кВт (2167 Гкал) - произведено тепловой энергии за весь отопительный сезон<br>
 5 544 000 руб. / 2167 Гкал = 2560 руб./Гкал – себестоимость тепловой энергии.<br>
-
-
         </p> <br><br>
 
-
-
-                <p style="text-decoration: underline;">Максимальная мощность котельной 3 Гкал : </p> <p>
+        <p style="text-decoration: underline;">Максимальная мощность котельной 3 Гкал : </p> <p>
             Затраты на организацию пункта производства тепловой энергии для теплоснабжения: <br><br>
 13,8 млн. руб. - 6 котлов «РПКТЭК-560»<br>
 0,6 млн. руб. – оплата доставки котлов<br>
@@ -587,16 +565,11 @@
 отопительный сезон
 9 828 000 руб./ 7560 Гкал = 1300 руб./Гкал – себестоимость тепловой энергии.
 Доход при тарифе 3500 руб.: 7560 Гкал х 3500 руб. = 26 460 000 руб.<br>
-
-
         </p>
-        <!-- <p class="red">Акция! до конца 2025 года</p> -->
-        <b>
-   </b>
+        <b></b>
     </div>
-
 </body>
-</html> 
+</html>
 
 
 
